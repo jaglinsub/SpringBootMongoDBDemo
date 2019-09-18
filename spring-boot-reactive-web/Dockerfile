@@ -16,6 +16,9 @@ RUN mvn package
 # our final base image
 FROM openjdk:8-jre-alpine
 
+RUN mkdir /usr/src/
+RUN chown -R 777 /usr/src/
+
 # copy over the built artifact from the maven image
 COPY /target/reactive-web-1.0.0-SNAPSHOT.jar /usr/src/spring-boot-reactive-web/
 
