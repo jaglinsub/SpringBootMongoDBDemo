@@ -1,17 +1,17 @@
+RUN pwd
+RUN ls -l
+
 # our base build image
 FROM maven:3.5-jdk-8 as maven
 
 # copy the project files
-# COPY ./pom.xml ./pom.xml
+COPY ./spring-boot-reactive-web/pom.xml ./spring-boot-reactive-web/pom.xml
 
 # build all dependencies
-# RUN mvn dependency:go-offline -B
+RUN mvn dependency:go-offline -B
 
 # copy your other files
-# COPY ./src ./src
-
-RUN pwd
-RUN ls -l
+COPY ./spring-boot-reactive-web/src ./spring-boot-reactive-web/src
 
 # build for release
 RUN mvn package
