@@ -10,6 +10,9 @@ FROM maven:3.5-jdk-8 as maven
 # copy your other files
 # COPY ./src ./src
 
+RUN pwd
+RUN ls -l
+
 # build for release
 RUN mvn package
 
