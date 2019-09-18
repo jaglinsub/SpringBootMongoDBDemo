@@ -2,16 +2,16 @@
 FROM maven:3.5-jdk-8 as maven
 
 # copy the project files
-COPY ./spring-boot-reactive-web/pom.xml ./spring-boot-reactive-web/pom.xml
+COPY ./spring-boot-reactive-web/pom.xml ./pom.xml
 
 # build all dependencies
 RUN mvn dependency:go-offline -B
 
 # copy your other files
-COPY ./spring-boot-reactive-web/src ./spring-boot-reactive-web/src
+COPY ./spring-boot-reactive-web/src ./src
 
 # build for release
-RUN mvn package
+RUN ./spring-boot-reactive-web/mvn package
 
 # our final base image
 FROM openjdk:8-jre-alpine
