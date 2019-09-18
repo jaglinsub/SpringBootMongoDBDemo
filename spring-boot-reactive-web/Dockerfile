@@ -1,6 +1,3 @@
-RUN pwd
-RUN ls -l
-
 # our base build image
 FROM maven:3.5-jdk-8 as maven
 
