@@ -1,5 +1,5 @@
 # our base build image
-FROM maven:3.5-jdk-8 as maven
+FROM maven:3.5-jdk-8 AS MAVEN_TOOL_CHAIN
 
 # copy the project files
 COPY ./spring-boot-reactive-web/pom.xml ./pom.xml
@@ -20,7 +20,7 @@ RUN mkdir /usr/src/
 RUN chown -R 777 /usr/src/
 
 # copy over the built artifact from the maven image
-COPY /target/reactive-web-1.0.0-SNAPSHOT.jar /usr/src/spring-boot-reactive-web/
+COPY --from=MAVEN_TOOL_CHAIN /target/reactive-web-1.0.0-SNAPSHOT.jar /usr/src/spring-boot-reactive-web/
 
 # set deployment directory
 WORKDIR /usr/src/spring-boot-reactive-web
