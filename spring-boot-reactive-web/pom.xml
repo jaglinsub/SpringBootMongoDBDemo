@@ -64,6 +64,7 @@
 					<systemPropertyVariables>
 						<xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>
 					</systemPropertyVariables>
+					<useSystemClassLoader>false</useSystemClassLoader>
 				</configuration>
 			</plugin>
 			<!-- JaCoCo configuration -->
