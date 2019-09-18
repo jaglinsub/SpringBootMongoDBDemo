@@ -11,7 +11,7 @@ RUN mvn dependency:go-offline -B
 COPY ./spring-boot-reactive-web/src ./src
 
 # build for release
-RUN ./spring-boot-reactive-web/mvn package
+RUN mvn package
 
 # our final base image
 FROM openjdk:8-jre-alpine
