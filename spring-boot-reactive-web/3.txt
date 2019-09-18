@@ -1,0 +1,58 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building reactive-web 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:2.0.0.RELEASE:run (default-cli) > test-compile @ reactive-web >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ reactive-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ reactive-web ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ reactive-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ reactive-web ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:2.0.0.RELEASE:run (default-cli) < test-compile @ reactive-web <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.0.0.RELEASE:run (default-cli) @ reactive-web ---
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.0.RELEASE)
+
+2019-09-16 23:34:09.459  INFO 29864 --- [           main] c.t.reactiveweb.ReactiveWebApplication   : Starting ReactiveWebApplication on DESKTOP-A5AQV3K with PID 29864 (C:\AProject\Tryouts\full-reactive-stack\spring-boot-reactive-web\target\classes started by jaganls in C:\AProject\Tryouts\full-reactive-stack\spring-boot-reactive-web)
+2019-09-16 23:34:09.465  INFO 29864 --- [           main] c.t.reactiveweb.ReactiveWebApplication   : No active profile set, falling back to default profiles: default
+2019-09-16 23:34:09.542  INFO 29864 --- [           main] onfigReactiveWebServerApplicationContext : Refreshing org.springframework.boot.web.reactive.context.AnnotationConfigReactiveWebServerApplicationContext@c63f50e: startup date [Mon Sep 16 23:34:09 CDT 2019]; root of context hierarchy
+2019-09-16 23:34:11.112  INFO 29864 --- [           main] s.w.r.r.m.a.RequestMappingHandlerMapping : Mapped "{[/quotes-blocking],methods=[GET]}" onto public java.lang.Iterable<com.thepracticaldeveloper.reactiveweb.domain.Quote> com.thepracticaldeveloper.reactiveweb.controller.QuoteBlockingController.getQuotesBlocking() throws java.lang.Exception
+2019-09-16 23:34:11.113  INFO 29864 --- [           main] s.w.r.r.m.a.RequestMappingHandlerMapping : Mapped "{[/quotes-blocking-paged],methods=[GET]}" onto public java.lang.Iterable<com.thepracticaldeveloper.reactiveweb.domain.Quote> com.thepracticaldeveloper.reactiveweb.controller.QuoteBlockingController.getQuotesBlocking(int,int) throws java.lang.Exception
+2019-09-16 23:34:11.115  INFO 29864 --- [           main] s.w.r.r.m.a.RequestMappingHandlerMapping : Mapped "{[/quotes-reactive],methods=[GET]}" onto public reactor.core.publisher.Flux<com.thepracticaldeveloper.reactiveweb.domain.Quote> com.thepracticaldeveloper.reactiveweb.controller.QuoteReactiveController.getQuoteFlux()
+2019-09-16 23:34:11.115  INFO 29864 --- [           main] s.w.r.r.m.a.RequestMappingHandlerMapping : Mapped "{[/quotes-reactive-paged],methods=[GET]}" onto public reactor.core.publisher.Flux<com.thepracticaldeveloper.reactiveweb.domain.Quote> com.thepracticaldeveloper.reactiveweb.controller.QuoteReactiveController.getQuoteFlux(int,int)
+2019-09-16 23:34:11.169  INFO 29864 --- [           main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.reactive.resource.ResourceWebHandler]
+2019-09-16 23:34:11.169  INFO 29864 --- [           main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.reactive.resource.ResourceWebHandler]
+2019-09-16 23:34:12.917  INFO 29864 --- [           main] .b.a.e.w.r.WebFluxEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public org.reactivestreams.Publisher<org.springframework.http.ResponseEntity<java.lang.Object>> org.springframework.boot.actuate.endpoint.web.reactive.AbstractWebFluxEndpointHandlerMapping$ReadOperationHandler.handle(org.springframework.web.server.ServerWebExchange)
+2019-09-16 23:34:12.918  INFO 29864 --- [           main] .b.a.e.w.r.WebFluxEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public org.reactivestreams.Publisher<org.springframework.http.ResponseEntity<java.lang.Object>> org.springframework.boot.actuate.endpoint.web.reactive.AbstractWebFluxEndpointHandlerMapping$ReadOperationHandler.handle(org.springframework.web.server.ServerWebExchange)
+2019-09-16 23:34:12.919  INFO 29864 --- [           main] .b.a.e.w.r.WebFluxEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.reactive.WebFluxEndpointHandlerMapping.links(org.springframework.web.server.ServerWebExchange)
+2019-09-16 23:34:12.999  INFO 29864 --- [           main] o.s.w.r.r.m.a.ControllerMethodResolver   : Looking for @ControllerAdvice: org.springframework.boot.web.reactive.context.AnnotationConfigReactiveWebServerApplicationContext@c63f50e: startup date [Mon Sep 16 23:34:09 CDT 2019]; root of context hierarchy
+2019-09-16 23:34:13.675  INFO 29864 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-09-16 23:34:13.740  INFO 29864 --- [ctor-http-nio-1] r.ipc.netty.tcp.BlockingNettyContext     : Started HttpServer on /0:0:0:0:0:0:0:0:8080
+2019-09-16 23:34:13.740  INFO 29864 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2019-09-16 23:34:13.744  INFO 29864 --- [           main] c.t.reactiveweb.ReactiveWebApplication   : Started ReactiveWebApplication in 4.674 seconds (JVM running for 8.356)
+2019-09-16 23:34:13.746  INFO 29864 --- [           main] c.t.r.configuration.QuijoteDataLoader    : Repository contains now 0 entries
+2019-09-16 23:36:04.316  INFO 29864 --- [      Thread-11] onfigReactiveWebServerApplicationContext : Closing org.springframework.boot.web.reactive.context.AnnotationConfigReactiveWebServerApplicationContext@c63f50e: startup date [Mon Sep 16 23:34:09 CDT 2019]; root of context hierarchy
+2019-09-16 23:36:04.318  INFO 29864 --- [      Thread-11] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-09-16 23:36:04.323  INFO 29864 --- [      Thread-11] r.ipc.netty.tcp.BlockingNettyContext     : Stopped HttpServer on /0:0:0:0:0:0:0:0:8080
+Terminate batch job (Y/N)? Terminate batch job (Y/N)? 
