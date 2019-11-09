@@ -1,19 +1,16 @@
 package com.thepracticaldeveloper.reactiveweb.controller;
 
-import com.sun.xml.internal.xsom.impl.scd.Iterators;
 import com.thepracticaldeveloper.reactiveweb.domain.InterestOptions;
 import com.thepracticaldeveloper.reactiveweb.domain.Interests;
-import com.thepracticaldeveloper.reactiveweb.domain.User;
-import com.thepracticaldeveloper.reactiveweb.domain.UserType;
-import com.thepracticaldeveloper.reactiveweb.repository.*;
+import com.thepracticaldeveloper.reactiveweb.repository.AnswerOptionsMongoReactiveRepository;
+import com.thepracticaldeveloper.reactiveweb.repository.InterestOptionsMongoReactiveRepository;
+import com.thepracticaldeveloper.reactiveweb.repository.InterestsMongoReactiveRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Flux;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

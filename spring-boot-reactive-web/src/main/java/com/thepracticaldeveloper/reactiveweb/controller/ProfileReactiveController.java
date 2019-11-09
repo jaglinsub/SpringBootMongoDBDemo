@@ -1,16 +1,12 @@
 package com.thepracticaldeveloper.reactiveweb.controller;
 
-import com.thepracticaldeveloper.reactiveweb.domain.InterestOptions;
-import com.thepracticaldeveloper.reactiveweb.domain.Interests;
 import com.thepracticaldeveloper.reactiveweb.domain.Profile;
-import com.thepracticaldeveloper.reactiveweb.repository.*;
+import com.thepracticaldeveloper.reactiveweb.repository.ExperienceMongoReactiveRepository;
+import com.thepracticaldeveloper.reactiveweb.repository.ProfileMongoReactiveRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/profile")
