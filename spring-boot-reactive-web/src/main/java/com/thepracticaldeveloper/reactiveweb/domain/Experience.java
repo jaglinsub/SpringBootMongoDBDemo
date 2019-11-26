@@ -14,13 +14,16 @@ public final class Experience {
     private String id;
     private String experienceName;
     private String roleName;
-    private String activity;
+    private String startMonth;
+    private String startYear;
+    private String endMonth;
+    private String endYear;
+    private String activityType;
     private String hoursspent;
-    private String learnings;
-    private String location;
-    private String startDate;
-    private String endDate;
-    private String anythingElse;;
+
+    private String responsibility1;
+    private String responsibility2;
+    private String responsibility3;
 
     private String userId;
 
@@ -52,12 +55,44 @@ public final class Experience {
         this.roleName = roleName;
     }
 
-    public String getActivity() {
-        return activity;
+    public String getStartMonth() {
+        return startMonth;
     }
 
-    public void setActivity(String activity) {
-        this.activity = activity;
+    public void setStartMonth(String startMonth) {
+        this.startMonth = startMonth;
+    }
+
+    public String getStartYear() {
+        return startYear;
+    }
+
+    public void setStartYear(String startYear) {
+        this.startYear = startYear;
+    }
+
+    public String getEndMonth() {
+        return endMonth;
+    }
+
+    public void setEndMonth(String endMonth) {
+        this.endMonth = endMonth;
+    }
+
+    public String getEndYear() {
+        return endYear;
+    }
+
+    public void setEndYear(String endYear) {
+        this.endYear = endYear;
+    }
+
+    public String getActivityType() {
+        return activityType;
+    }
+
+    public void setActivityType(String activityType) {
+        this.activityType = activityType;
     }
 
     public String getHoursspent() {
@@ -68,44 +103,28 @@ public final class Experience {
         this.hoursspent = hoursspent;
     }
 
-    public String getLearnings() {
-        return learnings;
+    public String getResponsibility1() {
+        return responsibility1;
     }
 
-    public void setLearnings(String learnings) {
-        this.learnings = learnings;
+    public void setResponsibility1(String responsibility1) {
+        this.responsibility1 = responsibility1;
     }
 
-    public String getLocation() {
-        return location;
+    public String getResponsibility2() {
+        return responsibility2;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setResponsibility2(String responsibility2) {
+        this.responsibility2 = responsibility2;
     }
 
-    public String getStartDate() {
-        return startDate;
+    public String getResponsibility3() {
+        return responsibility3;
     }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
-    public String getAnythingElse() {
-        return anythingElse;
-    }
-
-    public void setAnythingElse(String anythingElse) {
-        this.anythingElse = anythingElse;
+    public void setResponsibility3(String responsibility3) {
+        this.responsibility3 = responsibility3;
     }
 
     public String getUserId() {
@@ -114,45 +133,5 @@ public final class Experience {
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Experience that = (Experience) o;
-        return getId().equals(that.getId()) &&
-                getExperienceName().equals(that.getExperienceName()) &&
-                getRoleName().equals(that.getRoleName()) &&
-                getActivity().equals(that.getActivity()) &&
-                getHoursspent().equals(that.getHoursspent()) &&
-                getLearnings().equals(that.getLearnings()) &&
-                getLocation().equals(that.getLocation()) &&
-                getStartDate().equals(that.getStartDate()) &&
-                getEndDate().equals(that.getEndDate()) &&
-                getAnythingElse().equals(that.getAnythingElse()) &&
-                Objects.equals(getUserId(), that.getUserId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getExperienceName(), getRoleName(), getActivity(), getHoursspent(), getLearnings(), getLocation(), getStartDate(), getEndDate(), getAnythingElse(), getUserId());
-    }
-
-    @Override
-    public String toString() {
-        return "Experience{" +
-                "id='" + id + '\'' +
-                ", experienceName='" + experienceName + '\'' +
-                ", roleName='" + roleName + '\'' +
-                ", activity='" + activity + '\'' +
-                ", hoursspent='" + hoursspent + '\'' +
-                ", learnings='" + learnings + '\'' +
-                ", location='" + location + '\'' +
-                ", startDate='" + startDate + '\'' +
-                ", endDate='" + endDate + '\'' +
-                ", anythingElse='" + anythingElse + '\'' +
-                ", userId='" + userId + '\'' +
-                '}';
     }
 }
