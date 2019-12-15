@@ -22,6 +22,9 @@ public final class User {
     private String location;
     private String phoneNumber;
     private String organizationName;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private Date expDateofGrad;
+    private boolean receiveUpdates;
 
     @DBRef
     private UserType userType;
@@ -123,26 +126,45 @@ public final class User {
         this.userType = userType;
     }
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    public Date getExpDateofGrad() {
+        return expDateofGrad;
+    }
+
+    public void setExpDateofGrad(Date expDateofGrad) {
+        this.expDateofGrad = expDateofGrad;
+    }
+
+    public boolean isReceiveUpdates() {
+        return receiveUpdates;
+    }
+
+    public void setReceiveUpdates(boolean receiveUpdates) {
+        this.receiveUpdates = receiveUpdates;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return getId().equals(user.getId()) &&
-                getFirstName().equals(user.getFirstName()) &&
-                getLastName().equals(user.getLastName()) &&
-                getEmail().equals(user.getEmail()) &&
-                getDateofBirth().equals(user.getDateofBirth()) &&
-                getGrade().equals(user.getGrade()) &&
+        return isReceiveUpdates() == user.isReceiveUpdates() &&
+                Objects.equals(getId(), user.getId()) &&
+                Objects.equals(getFirstName(), user.getFirstName()) &&
+                Objects.equals(getLastName(), user.getLastName()) &&
+                Objects.equals(getEmail(), user.getEmail()) &&
+                Objects.equals(getDateofBirth(), user.getDateofBirth()) &&
+                Objects.equals(getGrade(), user.getGrade()) &&
                 Objects.equals(getLocation(), user.getLocation()) &&
-                getPhoneNumber().equals(user.getPhoneNumber()) &&
+                Objects.equals(getPhoneNumber(), user.getPhoneNumber()) &&
                 Objects.equals(getOrganizationName(), user.getOrganizationName()) &&
-                getUserType().equals(user.getUserType());
+                Objects.equals(getExpDateofGrad(), user.getExpDateofGrad()) &&
+                Objects.equals(getUserType(), user.getUserType());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getFirstName(), getLastName(), getEmail(), getDateofBirth(), getGrade(), getLocation(), getPhoneNumber(), getOrganizationName(), getUserType());
+        return Objects.hash(getId(), getFirstName(), getLastName(), getEmail(), getDateofBirth(), getGrade(), getLocation(), getPhoneNumber(), getOrganizationName(), getExpDateofGrad(), isReceiveUpdates(), getUserType());
     }
 
     @Override
@@ -157,6 +179,8 @@ public final class User {
                 ", location='" + location + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", organizationName='" + organizationName + '\'' +
+                ", expDateofGrad=" + expDateofGrad +
+                ", receiveUpdates=" + receiveUpdates +
                 ", userType=" + userType +
                 '}';
     }
