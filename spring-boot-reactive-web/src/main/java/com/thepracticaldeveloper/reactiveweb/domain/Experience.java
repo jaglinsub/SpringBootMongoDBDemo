@@ -19,6 +19,7 @@ public final class Experience {
     private String endMonth;
     private String endYear;
     private String activityType;
+    private String activityPoint;
     private String hoursspent;
 
     private String responsibility1;
@@ -93,6 +94,14 @@ public final class Experience {
 
     public void setActivityType(String activityType) {
         this.activityType = activityType;
+    }
+
+    public String getActivityPoint() {
+        return activityPoint;
+    }
+
+    public void setActivityPoint(String activityPoint) {
+        this.activityPoint = activityPoint;
     }
 
     public String getHoursspent() {
