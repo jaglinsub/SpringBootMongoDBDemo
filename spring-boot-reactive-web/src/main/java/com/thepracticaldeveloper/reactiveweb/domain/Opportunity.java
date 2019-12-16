@@ -13,6 +13,7 @@ public final class Opportunity {
     private String organizationName;
     private String organizationAddress;
     private String whenPosted;
+    private String typeofProfOppurtunity;
 
     @DBRef
     private OpportunityDetails opportunityDetails;
@@ -75,5 +76,13 @@ public final class Opportunity {
 
     public void setWhenPosted(String whenPosted) {
         this.whenPosted = whenPosted;
+    }
+
+    public String getTypeofProfOppurtunity() {
+        return typeofProfOppurtunity;
+    }
+
+    public void setTypeofProfOppurtunity(String typeofProfOppurtunity) {
+        this.typeofProfOppurtunity = typeofProfOppurtunity;
     }
 }

@@ -90,6 +90,7 @@ public class OpportunityDataLoader implements CommandLineRunner {
         opportunity.setOrganizationName("Kaiser Permanente");
         opportunity.setOrganizationAddress("San Mateo, CA 95014");
         opportunity.setWhenPosted(new Date().toString());
+        opportunity.setTypeofProfOppurtunity("Paid Internship ($20/hour)");
         opportunity.setOpportunityDetails(opportunityDetails);
 
         opportunityMongoReactiveRepository.save(opportunity).block();
