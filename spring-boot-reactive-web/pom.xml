@@ -53,6 +53,28 @@
 			<artifactId>stripe-java</artifactId>
 			<version>17.0.0</version>
 		</dependency>
+		<!--	SVG:Start	-->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-dom</artifactId>
+			<version>1.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-util</artifactId>
+			<version>1.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-transcoder</artifactId>
+			<version>1.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-codec</artifactId>
+			<version>1.12</version>
+		</dependency>
+		<!--	SVG: End	-->
 	</dependencies>
 
 	<build>

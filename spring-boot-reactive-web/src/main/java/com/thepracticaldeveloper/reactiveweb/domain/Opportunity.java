@@ -85,4 +85,18 @@ public final class Opportunity {
     public void setTypeofProfOppurtunity(String typeofProfOppurtunity) {
         this.typeofProfOppurtunity = typeofProfOppurtunity;
     }
+
+    @Override
+    public String toString() {
+        return "Opportunity{" +
+                "id='" + id + '\'' +
+                ", opportunityName='" + opportunityName + '\'' +
+                ", opportunityShortDesc='" + opportunityShortDesc + '\'' +
+                ", organizationName='" + organizationName + '\'' +
+                ", organizationAddress='" + organizationAddress + '\'' +
+                ", whenPosted='" + whenPosted + '\'' +
+                ", typeofProfOppurtunity='" + typeofProfOppurtunity + '\'' +
+//                ", opportunityDetails=" + opportunityDetails.toString() +
+                '}';
+    }
 }

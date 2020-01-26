@@ -33,11 +33,11 @@ public class InterestOptionsDataLoader implements CommandLineRunner {
                 return;
             }
             Hashtable<String, String[]> intTable = new Hashtable<String, String[]>();
-            intTable.put("I’m looking for more opportunities to", new String[]{"Learn Real-World Skills", "Build A Career"});
-            intTable.put("At school, when I’m given a project, I’d rather work", new String[]{"With A Team", "Independently"});
-            intTable.put("My favorite activity to do outside of school is", new String[]{"Play Basketball", "Go To Library"});
-            intTable.put("Ideally, before I graduate I want to know how to", new String[]{"Respect Others", "Listen More and Talk Less"});
-            intTable.put("After I graduate high school, I think I want to be a", new String[]{"Nurse", "Engineer"});
+            intTable.put("I’m looking for more opportunities to", new String[]{"talk to mentors", "explore different types of jobs", "get more hands on experience", "access internships", "build a resume"});
+            intTable.put("At school, when I’m given a project, I’d rather work", new String[]{"on my own", "with a team", "on my own and with a team"});
+            intTable.put("My favorite activity to do outside of school is", new String[]{"play sports", "spend time with friends", "work on side projects", "play videogames", "read", "articipate in after school clubs/activities"});
+            intTable.put("Ideally, before I graduate I want to know how to", new String[]{"improve writing skills", "give a good presentation", "lead a team", "think critically", "be a strong teammate"});
+            intTable.put("After I graduate high school, I think I want to be a", new String[]{"Medical Doctor", "EMT/Paramedic", "Nurse", "Therapist", "Pharmacist", "Dentist", "Athletic Trainer", "Nutritionist", "Physician", "Surgeon", "Veterinarian", "Bio-tech Coordinator", "Forensics Pathologist", "Healthcare Administrator", "Hospital Operational Engineer", "Psychologist", "Something in the medical field", "Other - not included in this list"});
 
             AtomicInteger displayOrder = new AtomicInteger(1);
             intTable.forEach( (k, v) -> {

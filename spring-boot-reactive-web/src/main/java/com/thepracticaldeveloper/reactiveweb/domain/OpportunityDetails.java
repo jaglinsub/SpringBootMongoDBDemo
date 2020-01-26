@@ -3,6 +3,8 @@ package com.thepracticaldeveloper.reactiveweb.domain;
 import org.bson.types.Binary;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Arrays;
+
 @Document(collection = "OpportunityDetails")
 public final class OpportunityDetails {
 
@@ -119,5 +121,30 @@ public final class OpportunityDetails {
 
     public void setQualificationDetails(String[] qualificationDetails) {
         this.qualificationDetails = qualificationDetails;
+    }
+
+    @Override
+    public String toString() {
+        String retStr = null;
+        try {
+            retStr = "OpportunityDetails{" +
+                    "id='" + id + '\'' +
+                    ", opportunityDtlsName='" + opportunityDtlsName + '\'' +
+                    ", organizationImage='" + organizationImage + '\'' +
+                    ", organizationURL='" + organizationURL + '\'' +
+                    ", typeofProfOppurtunity='" + typeofProfOppurtunity + '\'' +
+                    ", workLength='" + workLength + '\'' +
+                    ", workHours='" + workHours + '\'' +
+                    ", recommendations='" + recommendations + '\'' +
+                    ", schoolAttendance='" + schoolAttendance + '\'' +
+                    ", gpaScore='" + gpaScore + '\'' +
+                    ", oppurtunityLongDescription='" + oppurtunityLongDescription + '\'' +
+//                    ", qualificationDetails=" + Arrays.toString(qualificationDetails) +
+                    '}';
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return retStr;
     }
 }
