@@ -35,6 +35,10 @@ public class CareerCheckListDataLoader implements CommandLineRunner {
 
 @Override
     public void run(final String... args) throws Exception {
+        int iCnt = 10;
+        if (iCnt < 100) {
+            return;
+        }
         try {
             DefaultCareerCheckListItems defaultCareerCheckListItems = new DefaultCareerCheckListItems();
             String arr[] = {"GS Checklist item", "GI Checklist item", "GE Checklist item"};

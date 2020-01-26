@@ -30,6 +30,10 @@ public class QuijoteDataLoader implements CommandLineRunner {
 
     @Override
     public void run(final String... args) throws Exception {
+        int iCnt = 10;
+        if (iCnt < 100) {
+            return;
+        }
         if (quoteMongoReactiveRepository.count().block() == 0L) {
             final LongSupplier longSupplier = new LongSupplier() {
                 Long l = 0L;

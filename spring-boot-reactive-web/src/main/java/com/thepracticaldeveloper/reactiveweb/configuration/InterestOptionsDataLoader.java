@@ -28,6 +28,10 @@ public class InterestOptionsDataLoader implements CommandLineRunner {
 
 @Override
     public void run(final String... args) throws Exception {
+        int iCnt = 10;
+        if (iCnt < 100) {
+            return;
+        }
         try {
             if (interestOptionsMongoReactiveRepository.count().block() > 0L) {
                 return;
