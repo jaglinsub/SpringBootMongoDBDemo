@@ -92,6 +92,7 @@
 						<xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>
 					</systemPropertyVariables>
 					<useSystemClassLoader>false</useSystemClassLoader>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 			<!-- JaCoCo configuration -->
