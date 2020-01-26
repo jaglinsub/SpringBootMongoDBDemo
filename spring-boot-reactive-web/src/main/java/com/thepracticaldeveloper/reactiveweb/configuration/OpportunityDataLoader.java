@@ -130,20 +130,6 @@ public class OpportunityDataLoader implements CommandLineRunner {
             }
 
             opportunityDetails.setOrganizationImage(imgStr);
-
-            try {
-                String encodedImg = imgStr;
-                String partSeparator = ",";
-                if (imgStr.contains(partSeparator)) {
-                    encodedImg = imgStr.split(partSeparator)[1];
-                }
-                ByteArrayInputStream bis = new ByteArrayInputStream(Base64.getDecoder().decode(encodedImg));
-                BufferedImage bImage2 = ImageIO.read(bis);
-                ImageIO.write(bImage2, "png", new File("C:/Users/jaganls/AppData/Local/Temp/testImages/" + lhm.get("OrganizationName") + ".jpg"));
-            }
-            catch (Exception ex1) {
-                ex1.printStackTrace();
-            }
         }
         catch (Exception e) {
             e.printStackTrace();
