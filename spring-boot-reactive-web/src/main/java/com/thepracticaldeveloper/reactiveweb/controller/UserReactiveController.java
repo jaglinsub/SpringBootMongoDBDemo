@@ -1,6 +1,5 @@
 package com.thepracticaldeveloper.reactiveweb.controller;
 
-import com.thepracticaldeveloper.reactiveweb.domain.EmailStatus;
 import com.thepracticaldeveloper.reactiveweb.domain.ParentUser;
 import com.thepracticaldeveloper.reactiveweb.domain.User;
 import com.thepracticaldeveloper.reactiveweb.domain.UserType;
@@ -14,9 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 @RestController
 @RequestMapping("/api/user")
@@ -66,7 +62,7 @@ public class UserReactiveController {
 
         if (dbParentUser != null && !dbParentUser.isEmailSent()) {
             log.info("Starting Email Sending process.......");
-            sendWelcomeParentEmail(dbParentUser, savedUser);
+            emailService.sendWelcomeParentEmail(dbParentUser, savedUser, parentMongoReactiveRepository);
         }
         log.info("Returning after saving user....");
         return savedUser;
@@ -90,48 +86,6 @@ public class UserReactiveController {
             return parentMongoReactiveRepository.save(parentUser).block();
         }
 
-    }
-
-    private void sendWelcomeParentEmail(ParentUser parentUser, User user) {
-        if (parentUser != null && !parentUser.isEmailSent()) {
-            String subject = "Welcome to 'Next Step'";
-            String body = String.join(
-                    System.getProperty("line.separator"),
-                    "<h1>Welcome to 'Next Step</h1>",
-                    "<p>Click on the below link to buy the subscription for your child." + user.getFirstName() + " " + user.getLastName(),
-                    "<a href='http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com/login/1/" +user.getId() + "'>Subscribe</a>."
-//                    "<a href='http://localhost:4200/login/1/" + user.getId() + "'>Subscribe</a>."
-            );
-            try {
-                log.info("Started Sending Email");
-                Future<EmailStatus> futureEmailStatus = emailService.email(parentUser.getEmail(), subject, body);
-                while (true) {
-                    if (futureEmailStatus.isDone()) {
-                        EmailStatus emailStatus = futureEmailStatus.get();
-                        log.info("Result from asynchronous process - " + emailStatus);
-                        if (emailStatus != null && emailStatus.isEmailSent()) {
-                            parentUser.setEmailSent(true);
-                        }
-                        else {
-                            parentUser.setEmailSent(false);
-                            log.error("Email Error::" + emailStatus.getErrorMessage());
-                        }
-                        parentMongoReactiveRepository.save(parentUser).block();
-                        log.info("Email Sent=" + user.getParentUser().isEmailSent());
-                        break;
-                    }
-                    log.info("Continue doing something else. ");
-                    Thread.sleep(500);
-                }
-                log.info("Done Sending Email");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     @GetMapping()
