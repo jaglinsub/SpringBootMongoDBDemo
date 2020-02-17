@@ -22,9 +22,14 @@ public final class User {
     private String location;
     private String phoneNumber;
     private String organizationName;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date expDateofGrad;
+    private String expYearofGrad;
     private boolean receiveUpdates;
+    private String subscriptionId;
+    private String subscriptionPlanId;
+    private String subscriptionPlanName;
+
+    @DBRef
+    private ParentUser parentUser;
 
     @DBRef
     private UserType userType;
@@ -42,7 +47,7 @@ public final class User {
         this.location = location;
         this.phoneNumber = phoneNumber;
         this.organizationName = organizationName;
-        this.userType = userType;
+//        this.userType = userType;
     }
 
     public String getId() {
@@ -126,15 +131,6 @@ public final class User {
         this.userType = userType;
     }
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    public Date getExpDateofGrad() {
-        return expDateofGrad;
-    }
-
-    public void setExpDateofGrad(Date expDateofGrad) {
-        this.expDateofGrad = expDateofGrad;
-    }
-
     public boolean isReceiveUpdates() {
         return receiveUpdates;
     }
@@ -143,28 +139,44 @@ public final class User {
         this.receiveUpdates = receiveUpdates;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return isReceiveUpdates() == user.isReceiveUpdates() &&
-                Objects.equals(getId(), user.getId()) &&
-                Objects.equals(getFirstName(), user.getFirstName()) &&
-                Objects.equals(getLastName(), user.getLastName()) &&
-                Objects.equals(getEmail(), user.getEmail()) &&
-                Objects.equals(getDateofBirth(), user.getDateofBirth()) &&
-                Objects.equals(getGrade(), user.getGrade()) &&
-                Objects.equals(getLocation(), user.getLocation()) &&
-                Objects.equals(getPhoneNumber(), user.getPhoneNumber()) &&
-                Objects.equals(getOrganizationName(), user.getOrganizationName()) &&
-                Objects.equals(getExpDateofGrad(), user.getExpDateofGrad()) &&
-                Objects.equals(getUserType(), user.getUserType());
+    public String getExpYearofGrad() {
+        return expYearofGrad;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getFirstName(), getLastName(), getEmail(), getDateofBirth(), getGrade(), getLocation(), getPhoneNumber(), getOrganizationName(), getExpDateofGrad(), isReceiveUpdates(), getUserType());
+    public void setExpYearofGrad(String expYearofGrad) {
+        this.expYearofGrad = expYearofGrad;
+    }
+
+    public ParentUser getParentUser() {
+        return parentUser;
+    }
+
+    public void setParentUser(ParentUser parentUser) {
+        this.parentUser = parentUser;
+    }
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public void setSubscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
+    public String getSubscriptionPlanId() {
+        return subscriptionPlanId;
+    }
+
+    public void setSubscriptionPlanId(String subscriptionPlanId) {
+        this.subscriptionPlanId = subscriptionPlanId;
+    }
+
+    public String getSubscriptionPlanName() {
+        return subscriptionPlanName;
+    }
+
+    public void setSubscriptionPlanName(String subscriptionPlanName) {
+        this.subscriptionPlanName = subscriptionPlanName;
     }
 
     @Override
@@ -179,8 +191,12 @@ public final class User {
                 ", location='" + location + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", organizationName='" + organizationName + '\'' +
-                ", expDateofGrad=" + expDateofGrad +
+                ", expYearofGrad='" + expYearofGrad + '\'' +
                 ", receiveUpdates=" + receiveUpdates +
+                ", subscriptionId='" + subscriptionId + '\'' +
+                ", subscriptionPlanId='" + subscriptionPlanId + '\'' +
+                ", subscriptionPlanName='" + subscriptionPlanName + '\'' +
+                ", parentUser=" + parentUser +
                 ", userType=" + userType +
                 '}';
     }

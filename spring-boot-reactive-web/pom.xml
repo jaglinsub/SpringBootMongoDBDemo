@@ -75,6 +75,19 @@
 			<version>1.12</version>
 		</dependency>
 		<!--	SVG: End	-->
+
+		<!-- Email: Start -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.11.713</version>
+		</dependency>
+		<!-- Email: End -->
 	</dependencies>
 
 	<build>

@@ -7,6 +7,10 @@ public final class PaymentDetails {
     private String email;
     private String phone;
     private String zipCode;
+    private String planId;
+    private String planName;
+    private String studentId;
+    private String parentId;
 
     public String getId() {
         return id;
@@ -54,5 +58,37 @@ public final class PaymentDetails {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getPlanId() {
+        return planId;
+    }
+
+    public void setPlanId(String planId) {
+        this.planId = planId;
+    }
+
+    public String getPlanName() {
+        return planName;
+    }
+
+    public void setPlanName(String planName) {
+        this.planName = planName;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
     }
 }
