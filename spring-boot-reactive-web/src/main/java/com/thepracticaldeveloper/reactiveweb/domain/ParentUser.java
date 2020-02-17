@@ -1,12 +1,7 @@
 package com.thepracticaldeveloper.reactiveweb.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
 
 @Document(collection = "Parent")
 public final class ParentUser {

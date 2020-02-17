@@ -2,20 +2,14 @@ package com.thepracticaldeveloper.reactiveweb.controller;
 
 import com.thepracticaldeveloper.reactiveweb.domain.ParentUser;
 import com.thepracticaldeveloper.reactiveweb.domain.User;
-import com.thepracticaldeveloper.reactiveweb.domain.UserType;
 import com.thepracticaldeveloper.reactiveweb.repository.ParentMongoReactiveRepository;
 import com.thepracticaldeveloper.reactiveweb.repository.UserMongoReactiveRepository;
-import com.thepracticaldeveloper.reactiveweb.repository.UserTypeMongoReactiveRepository;
 import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Example;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Flux;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/parent")
