@@ -99,8 +99,8 @@ public class UserReactiveController {
                     System.getProperty("line.separator"),
                     "<h1>Welcome to 'Next Step</h1>",
                     "<p>Click on the below link to buy the subscription for your child." + user.getFirstName() + " " + user.getLastName(),
-                    //"<a href='http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com/login/1/" +user.getId() + "'>Subscribe</a>."
-                    "<a href='http://localhost:4200/login/1/" + user.getId() + "'>Subscribe</a>."
+                    "<a href='http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com/login/1/" +user.getId() + "'>Subscribe</a>."
+//                    "<a href='http://localhost:4200/login/1/" + user.getId() + "'>Subscribe</a>."
             );
             try {
                 log.info("Started Sending Email");
